@@ -61,8 +61,6 @@ export const TodoListModel = types
         const { data } = yield store.dispatch(todoApi.endpoints.getTodoList.initiate())
 
         applySnapshot(self.todoList, data)
-
-
       } finally {
         self.setLoading(false)
       }
