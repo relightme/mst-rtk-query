@@ -1,0 +1,30 @@
+.todoAdd {
+	display: flex;
+	gap: 10px;
+}
+
+.todoList {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.todoItem {
+	display: flex;
+	gap: 10px;
+}
+
+.todoItemCheckbox {
+	width: 1rem;
+	height: 1rem;
+	cursor: pointer;
+
+	&:disabled {
+		cursor: not-allowed;
+	}
+}
+
+.todoItemText {
+	min-width: 400px;
+	max-width: 400px;
+}

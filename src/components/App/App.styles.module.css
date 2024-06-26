@@ -1,0 +1,13 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	min-height: 600px;
+	min-width: 921.73px;
+}
+
+.todoListWrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 25px;
+}
