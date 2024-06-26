@@ -10,6 +10,23 @@ export const TodoListModel = types
     todoList: types.optional(types.array(TodoModel), []),
     isLoading: types.optional(types.boolean, false),
   })
+  .views((self) => ({
+    get longestTitle() {
+      return self.todoList.length ? self.todoList.reduce((a, b) => (a.title.length > b.title.length ? a : b)).title : ""
+    },
+
+    get shortestTitle() {
+      return self.todoList.length ? self.todoList.reduce((a, b) => (a.title.length < b.title.length ? a : b)).title : ""
+    },
+
+    calcListLength() {
+      return self.todoList.length
+    },
+
+    getFirstCustomName(name: string) {
+      return self.todoList[0].title + name
+    },
+  }))
   .actions((self) => ({
     setLoading(state: boolean) {
       self.isLoading = state
@@ -66,4 +83,3 @@ export const TodoListModel = types
       }
     }),
   }))
-
